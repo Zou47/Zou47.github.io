@@ -152,6 +152,138 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-flex学习" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/19/flex学习/">flex学习</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/19/flex学习/" class="archive-article-date">
+  	<time datetime="2019-04-19T04:36:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="FLEX弹性布局学习"><a href="#FLEX弹性布局学习" class="headerlink" title="FLEX弹性布局学习"></a>FLEX弹性布局学习</h1><h3 id="flex-grow"><a href="#flex-grow" class="headerlink" title="flex-grow"></a>flex-grow</h3><p>如果我们希望，输入框占据当前行的所有剩余宽度，只需要指定输入框的<code>flex-grow</code>属性为<code>1</code>。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="selector-tag">input</span>  &#123;</span><br><span class="line">&gt;   flex-grow: 1;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h3><p><code>align-self</code>属性可以取四个值。</p>
+<blockquote>
+<ul>
+<li><code>flex-start</code>：顶边对齐，高度不拉伸</li>
+<li><code>flex-end</code>：底边对齐，高度不拉伸</li>
+<li><code>center</code>：居中，高度不拉伸</li>
+<li><code>stretch</code>：默认值，高度自动拉伸</li>
+</ul>
+</blockquote>
+<p>如果项目很多，一个个地设置<code>align-self</code>属性就很麻烦。这时，可以在容器元素（本例为表单）设置<code>align-items</code>属性，它的值被所有子项目的<code>align-self</code>属性继承。</p>
+<h3 id="flex-driection"><a href="#flex-driection" class="headerlink" title="flex-driection"></a>flex-driection</h3><p>决定主轴的方向，即项目排列的方向，有四个可能的值：row(默认)|row-reverse|column|column-reverse</p>
+<p><strong>row</strong>:主轴为水平方向，项目沿主轴从左至右排列</p>
+<p><strong>column</strong>：主轴为竖直方向，项目沿主轴从上至下排列</p>
+<p><strong>row-reverse</strong>：主轴水平，项目从右至左排列，与row反向</p>
+<p><strong>column-reverse</strong>：主轴竖直，项目从下至上排列，与column反向</p>
+<h3 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a>flex-wrap</h3><p>默认情况下，item排列在一条线上，即主轴上，flex-wrap决定当排列不下时是否换行以及换行的方式，可能的值nowrap(默认)|wrap|wrap-reverse</p>
+<p><strong>nowrap</strong>：自动缩小项目，不换行</p>
+<p><strong>wrap</strong>：换行，且第一行在上方</p>
+<p><strong>wrap-reverse</strong>：换行，第一行在下面</p>
+<h3 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h3><p>决定item在主轴上的对齐方式，可能的值有flex-start（默认），flex-end，center，space-between，space-around。当主轴沿水平方向时，具体含义为</p>
+<p><strong>flex-start</strong>：左对齐</p>
+<p><strong>flex-end</strong>：右对齐</p>
+<p><strong>center</strong>：居中对齐</p>
+<p><strong>space- between</strong>：两端对齐</p>
+<p><strong>space-around</strong>：沿轴线均匀分布</p>
+<h3 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h3><p>决定了item在交叉轴上的对齐方式，可能的值有flex-start|flex-end|center|baseline|stretch，当主轴水平时，其具体含义为</p>
+<p><strong>flex-start</strong>：顶端对齐</p>
+<p><strong>flex-end</strong>：底部对齐</p>
+<p><strong>center</strong>：竖直方向上居中对齐</p>
+<p><strong>baseline</strong>：item第一行文字的底部对齐</p>
+<p><strong>stretch</strong>：当item未设置高度时，item将和容器等高对齐</p>
+<h3 id="align-content"><a href="#align-content" class="headerlink" title="align-content"></a>align-content</h3><p>该属性定义了当有多根主轴时，即item不止一行时，多行在交叉轴轴上的对齐方式。注意当有多行时，定义了align-content后，align-items属性将失效。align-content可能值含义如下（假设主轴为水平方向）：</p>
+<p><strong>flex-start</strong>：左对齐</p>
+<p><strong>flex-end</strong>：右对齐</p>
+<p><strong>center</strong>：居中对齐</p>
+<p><strong>space- between</strong>：两端对齐</p>
+<p><strong>space-around</strong>：沿轴线均匀分布</p>
+<p><strong>stretch</strong>：各行将根据其flex-grow值伸展以充分占据剩余空间</p>
+<h2 id="flex-item属性详述"><a href="#flex-item属性详述" class="headerlink" title="flex item属性详述"></a><strong>flex item属性详述</strong></h2><h3 id="order"><a href="#order" class="headerlink" title="order"></a>order</h3><p>order的值是整数，默认为0，整数越小，item排列越靠前，如下图所示代码如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;wrap&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;div&quot; style=&quot;order:4&quot;&gt;&lt;h2&gt;item 1&lt;/h2&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;div&quot; style=&quot;order:2&quot;&gt;&lt;h2&gt;item 2&lt;/h2&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;div&quot; style=&quot;order:3&quot;&gt;&lt;h2&gt;item 3&lt;/h2&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;div&quot; style=&quot;order:1&quot;&gt;&lt;h2&gt;item 4&lt;/h2&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>效果图为</p>
+<p>　　<img src="https://images2015.cnblogs.com/blog/1008386/201608/1008386-20160830191453371-297198071.png" alt="img"></p>
+<h3 id="flex-grow-1"><a href="#flex-grow-1" class="headerlink" title="flex-grow"></a>flex-grow</h3><p>定义了当flex容器有多余空间时，item是否放大。默认值为0，即当有多余空间时也不放大；可能的值为整数，表示不同item的放大比例，如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;wrap&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;div&quot; style=&quot;flex-grow:1&quot;&gt;&lt;h2&gt;item 1&lt;/h2&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;div&quot; style=&quot;flex-grow:2&quot;&gt;&lt;h2&gt;item 2&lt;/h2&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;div&quot; style=&quot;flex-grow:3&quot;&gt;&lt;h2&gt;item 3&lt;/h2&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>即当有多余空间时item1、item2、和item3以1：2：3的比例放大。</p>
+<h3 id="flex-basis"><a href="#flex-basis" class="headerlink" title="flex-basis"></a>flex-basis</h3><p>表示项目在主轴上占据的空间，默认值为auto。如下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;wrap&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;div&quot; style=&quot;flex-basis:80px&quot;&gt;&lt;h2&gt;item 1&lt;/h2&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;div&quot; style=&quot;flex-basis:160px&quot;&gt;&lt;h2&gt;item 2&lt;/h2&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;div&quot; style=&quot;flex-basis:240px&quot;&gt;&lt;h2&gt;item 3&lt;/h2&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>　　其效果图为</p>
+<p>　　<img src="https://images2015.cnblogs.com/blog/1008386/201608/1008386-20160830193047511-1893074451.png" alt="img"></p>
+<h2 id="常用flex布局"><a href="#常用flex布局" class="headerlink" title="常用flex布局"></a>常用flex布局</h2><p>原文链接：<a href="http://caibaojian.com/flexbox-basic-tourial.html" target="_blank" rel="noopener">http://caibaojian.com/flexbox-basic-tourial.html</a></p>
+<p>任何一个容器都可以指定为 Flex 布局。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="selector-class">.box</span>&#123;</span><br><span class="line">&gt;   display: flex;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>行内元素也可以使用 Flex 布局。<a href="http://caibaojian.com/flexbox-basic-tourial.html" target="_blank" rel="noopener">·</a></p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="selector-class">.box</span>&#123;</span><br><span class="line">&gt;   display: inline-flex;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>Webkit 内核的浏览器，必须加上<code>-webkit</code>前缀。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; //code from http://caibaojian.com/flexbox-basic-tourial.html</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="selector-class">.box</span>&#123;</span><br><span class="line">&gt;   display: -webkit-flex; /* Safari */</span><br><span class="line">&gt;   <span class="selector-tag">display</span>: <span class="selector-tag">flex</span>;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>注意，设为 Flex 布局以后，子元素的<code>float</code>、<code>clear</code>和<code>vertical-align</code>属性将失效。</p>
+<p>采用 Flex 布局的元素，称为 Flex 容器（flex container），简称”容器”。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称”项目”。</p>
+<p>容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做<code>main start</code>，结束位置叫做<code>main end</code>；交叉轴的开始位置叫做<code>cross start</code>，结束位置叫做<code>cross end</code>。</p>
+<p>项目默认沿主轴排列。单个项目占据的主轴空间叫做<code>main size</code>，占据的交叉轴空间叫做<code>cross size</code>。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/19/flex学习/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-春学期第三篇" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -898,15 +1030,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Node</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Web Components</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">耶</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Node</a>
               </li>
             
             <div class="clearfix"></div>
